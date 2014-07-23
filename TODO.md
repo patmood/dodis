@@ -2,3 +2,4 @@
 - sklighe
 - skligheasge
 - sklighe
+- buy

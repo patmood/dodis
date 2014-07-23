@@ -9,7 +9,9 @@ Clone this repo and simply run `python dodis.py` to get started.
 
 For regular use and fast execution, add the following alias shell:
 
-`dd = python dodis.py`
+`dd = python ~/path/to/dodis/dodis.py`
+
+This allows you to quickly add items from anywhere by running `dd -a Buy some milk`
 
 ## Usage
 
