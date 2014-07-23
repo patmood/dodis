@@ -6,7 +6,6 @@ def main():
   p = optparse.OptionParser()
   p.add_option("--file", "-f", default="TODO.md")
   p.add_option("--title", "-t", default="")
-  p.add_option("--add", "-a", default="")
   p.add_option("--delete", "-d", default="")
   p.add_option("--reset", "-r", default="")
   options, arguments = p.parse_args()
@@ -17,15 +16,15 @@ def main():
   if not os.path.exists(options.file):
     reset_list(options.file)
 
-  if options.add:
-    item = options.add + " " + " ".join(arguments)
-    write_item(file_path, item)
-  elif options.title:
+  if options.title:
     write_title(file_path, options.title)
   elif options.delete:
     delete_item(file_path, options.delete)
   elif options.reset:
     reset_list(file_path)
+  elif arguments:
+    item = " ".join(arguments)
+    write_item(file_path, item)
   else:
     read_file(file_path)
 

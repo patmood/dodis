@@ -29,4 +29,6 @@ Options:
 -r, --reset       reset a list
 ```
 
+## Credit
 
+Dodis was inspired by Steve Tosh's "t" http://stevelosh.com/projects/t/. An awesome project that I wanted to attempt myself while learning python.
