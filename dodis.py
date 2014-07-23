@@ -13,8 +13,8 @@ def main():
   dir_path = os.path.dirname(os.path.realpath(__file__))
   file_path = dir_path + "/" + options.file
 
-  if not os.path.exists(options.file):
-    reset_list(options.file)
+  if not os.path.exists(file_path):
+    reset_list(file_path)
 
   if options.title:
     title = options.title + " " + " ".join(arguments)
