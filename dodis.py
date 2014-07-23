@@ -17,7 +17,8 @@ def main():
     reset_list(options.file)
 
   if options.title:
-    write_title(file_path, options.title)
+    title = options.title + " " + " ".join(arguments)
+    write_title(file_path, title)
   elif options.delete:
     delete_item(file_path, options.delete)
   elif options.reset:
