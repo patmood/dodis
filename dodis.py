@@ -12,7 +12,7 @@ def main():
   options, arguments = p.parse_args()
 
   if not os.path.exists(options.file):
-    open(options.file, "a+").close()
+    reset_list(options.file)
 
   if options.add:
     item = options.add + " " + " ".join(arguments)
@@ -73,7 +73,6 @@ def reset_list(filename):
   file = open(filename, "w")
   file.write("# TODO\n")
   file.close()
-  read_file(filename)
 
 if __name__ == "__main__":
   main()
