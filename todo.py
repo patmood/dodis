@@ -6,7 +6,7 @@ def main():
   p.add_option('--title', '-t', default="")
   p.add_option('--item', '-i', default="")
   options, arguments = p.parse_args()
-  filename = 'newfile.txt'
+  filename = 'newfile.md'
 
   if options.item:
     write_file(filename, options.item)
