@@ -1,22 +1,30 @@
 #!/usr/bin/env python
 import optparse
+import os
 
 def main():
   p = optparse.OptionParser()
+  p.add_option("--file", "-f", default="TODO.md")
   p.add_option("--title", "-t", default="")
-  p.add_option("--item", "-i", default="")
+  p.add_option("--add", "-a", default="")
   p.add_option("--delete", "-d", default="")
+  p.add_option("--reset", "-r", default="")
   options, arguments = p.parse_args()
-  filename = 'newfile.md'
 
-  if options.item:
-    write_item(filename, options.item)
+  if not os.path.exists(options.file):
+    open(options.file, "a+").close()
+
+
+  if options.add:
+    write_item(options.file, options.add)
   elif options.title:
-    write_title(filename, options.title)
+    write_title(options.file, options.title)
   elif options.delete:
-    delete_item(filename, options.delete)
+    delete_item(options.file, options.delete)
+  elif options.reset:
+    reset_list(options.file)
   else:
-    read_file(filename)
+    read_file(options.file)
 
 def read_file(filename):
   print
@@ -58,6 +66,12 @@ def delete_item(filename, item_num):
     if str(i) != item_num:
       file.write(line)
     i = i + 1
+  file.close()
+  read_file(filename)
+
+def reset_list(filename):
+  file = open(filename, "w")
+  file.write("# TODO\n")
   file.close()
   read_file(filename)
 
