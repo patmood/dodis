@@ -15,6 +15,49 @@ This allows you to quickly add items from anywhere by running `dd -a Buy some mi
 
 ## Usage
 
+### Add and item
+
+```
+$ dd Buy milk
+
+# TODO
+
+  [0] - Buy milk
+
+```
+
+### Remove an item
+
+```
+$ dd -d 0
+
+# TODO
+
+```
+
+### Change the title
+
+```
+$ dd -t DO THESE THINGS:
+
+# DO THESE THINGS
+
+  [0] - Buy milk
+
+```
+
+### Use a custom list file
+
+The default list file is `TODO.md` located in the same directory as the script. You can use a custom list and switch between them using the `-f` option.
+
+`$ dd -f mylist.md`
+
+### Reset a list
+
+`$ dd -r TODO.md`
+
+### Options
+
 Usage:
 
 `python dodis.py [options]`
@@ -24,7 +67,6 @@ Options:
 ```
 -h, --help        show all options
 -t, --title       change the list title
--a, --add         add a list item
 -d, --delete      delete a list item
 -r, --reset       reset a list
 ```
