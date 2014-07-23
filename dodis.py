@@ -11,20 +11,23 @@ def main():
   p.add_option("--reset", "-r", default="")
   options, arguments = p.parse_args()
 
+  dir_path = os.path.dirname(os.path.realpath(__file__))
+  file_path = dir_path + "/" + options.file
+
   if not os.path.exists(options.file):
     reset_list(options.file)
 
   if options.add:
     item = options.add + " " + " ".join(arguments)
-    write_item(options.file, item)
+    write_item(file_path, item)
   elif options.title:
-    write_title(options.file, options.title)
+    write_title(file_path, options.title)
   elif options.delete:
-    delete_item(options.file, options.delete)
+    delete_item(file_path, options.delete)
   elif options.reset:
-    reset_list(options.file)
+    reset_list(file_path)
   else:
-    read_file(options.file)
+    read_file(file_path)
 
 def read_file(filename):
   print
