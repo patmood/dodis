@@ -14,9 +14,9 @@ def main():
   if not os.path.exists(options.file):
     open(options.file, "a+").close()
 
-
   if options.add:
-    write_item(options.file, options.add)
+    item = options.add + " " + " ".join(arguments)
+    write_item(options.file, item)
   elif options.title:
     write_title(options.file, options.title)
   elif options.delete:
