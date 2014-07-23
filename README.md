@@ -5,13 +5,13 @@ Do Dis is an extremely simple todo list manager for the commanline. The name sou
 
 ## Installation
 
-Clone this repo and simply run `python dodis.py` to get started.
+1. Clone this repo `git clone https://github.com/patmood/dodis.git`
+2. Simply run `python dodis.py` to get started
+3. For regular use and fast execution, add an alias in your shell profile (eg `~/.bashrc' for bash, or `~/.config/fish/config.fish` for fish shell). Add the line:
 
-For regular use and fast execution, add the following alias shell:
+`alias dd="python ~/path/to/dodis/dodis.py"`
 
-`dd = python ~/path/to/dodis/dodis.py`
-
-This allows you to quickly add items from anywhere by running `dd -a Buy some milk`
+This allows you to quickly add items from anywhere by running `dd`
 
 ## Usage
 
